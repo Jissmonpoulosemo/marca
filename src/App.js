@@ -1,11 +1,10 @@
 // App.jsx
-import React, { useState, useEffect, useRef, useCallback } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import {
-  Heart, Calendar, MapPin, Clock, Phone, Share2, Music, Play, Pause,
-  ChevronDown, Copy, Check, X, ExternalLink, User, Users, Gift,
-  MessageCircle, Navigation, Home, BookOpen, Image, Mail,
-  Sparkles, Award, Menu, Volume2, VolumeX, Camera, Film, Star
+  Heart, Calendar, MapPin, Phone, Share2, Music, Play, Pause,
+  ChevronDown, Copy, Check, X, ExternalLink, MessageCircle,
+  Home, BookOpen, Image, Mail
 } from 'lucide-react';
 
 // Configuration
@@ -120,16 +119,13 @@ const FloatingParticles = () => {
 const App = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isPlaying, setIsPlaying] = useState(false);
-  const [currentSection, setCurrentSection] = useState('home');
   const [countdown, setCountdown] = useState({ days: 0, hours: 0, minutes: 0, seconds: 0 });
   const [isCountdownZero, setIsCountdownZero] = useState(false);
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
-  const [wishes, setWishes] = useState([]);
   const [showGallery, setShowGallery] = useState(false);
   const [galleryIndex, setGalleryIndex] = useState(0);
   const [copied, setCopied] = useState(false);
   const audioRef = useRef(null);
-  const [isMuted, setIsMuted] = useState(false);
   const [showVideo, setShowVideo] = useState(false);
 
   // Countdown logic
@@ -495,7 +491,7 @@ const App = () => {
               {copied ? <Check size={16} /> : <Copy size={16} />} Copy Hashtag
             </button>
             <div className="social-links">
-              <a href={CONFIG.social.instagram} target="_blank" rel="noopener"><Share2 size={24} /></a>
+              <a href={CONFIG.social.instagram} target="_blank" rel="noreferrer"><Share2 size={24} /></a>
               <button onClick={shareInvite}><Share2 size={24} /></button>
             </div>
           </Section>
@@ -509,7 +505,7 @@ const App = () => {
                   <h4>{c.name}</h4>
                   <div className="contact-actions">
                     <a href={`tel:${c.phone}`}><Phone size={18} /> Call</a>
-                    <a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noopener"><MessageCircle size={18} /> WhatsApp</a>
+                    <a href={`https://wa.me/${c.whatsapp}`} target="_blank" rel="noreferrer"><MessageCircle size={18} /> WhatsApp</a>
                   </div>
                 </div>
               ))}
