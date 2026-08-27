@@ -2,7 +2,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import './App.css';
 import {
-  Heart, Calendar, MapPin, Phone, Share2, Music, Play, Pause,
+  Heart, Calendar, MapPin, Phone, Share2, Play, Pause,
   ChevronDown, Copy, Check, X, ExternalLink, MessageCircle,
   Home, BookOpen, Image, Mail
 } from 'lucide-react';
